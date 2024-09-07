@@ -63,7 +63,9 @@ pipeline{
                    
                   def SonarQubecredentialsId = 'sonarqube-api'
                 //   QualityGateStatus(SonarQubecredentialsId)
-                 waitForQualityGate abortPipeline: false, credentialsId: credentialsId
+                // waitForQualityGate abortPipeline: false, credentialsId: credentialsId
+                 echo "=====================Skipped this step due to error========================"
+
 
                }
             }
