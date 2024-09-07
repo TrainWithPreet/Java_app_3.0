@@ -61,8 +61,10 @@ pipeline{
             steps{
                script{
                    
-                   def SonarQubecredentialsId = 'sonarqube-api'
-                   QualityGateStatus(SonarQubecredentialsId)
+                  def SonarQubecredentialsId = 'sonarqube-api'
+                //   QualityGateStatus(SonarQubecredentialsId)
+                 waitForQualityGate abortPipeline: false, credentialsId: credentialsId
+
                }
             }
        }
